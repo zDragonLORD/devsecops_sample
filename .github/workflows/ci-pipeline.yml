@@ -87,10 +87,12 @@ jobs:
       target: "http://localhost:8000"
       format: "html"
       output: "zap-report.html"
-
+  - name: List Workspace Files
+    run: ls -la
+    
   - name: Upload Scan Report
     uses: actions/upload-artifact@v3
     if: always()
     with:
       name: zap-scan-report
-      path: zap-report.html
+      path: reports/zap-report.html
